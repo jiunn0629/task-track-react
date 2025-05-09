@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+tast-track-react/
+├── public/
+├── src/
+│   ├── components/      # 共用元件
+│   ├── features/        # 各功能模組（如 tasks, dailyLog, review）
+│   ├── pages/           # 各頁面
+│   ├── hooks/           # 自訂 hooks
+│   ├── utils/           # 工具函式
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── package.json
+└── README.md
