@@ -9,11 +9,12 @@ export const BOARD_SECTIONS = {
 export const INITIAL_TASKS: Task[] = [
 	{
 		id: 'task-001',
-		title: 'Setup project repository',
+		summary: 'Setup project repository',
 		description: 'Setup project repository',
 		status: 'backlog',
-		dueDate: '2025-05-20',
+		estimateTime: 10,
 		priority: 'medium',
+		taskType: 'feature',
 		project: 'Lookr3',
 		relateTask: [],
 		childTask: [],
@@ -21,10 +22,11 @@ export const INITIAL_TASKS: Task[] = [
 	},
 	{
 		id: 'task-002',
-		title: 'Implement user login',
+		summary: 'Implement user login',
 		description: 'Implement user login',
 		status: 'in progress',
-		dueDate: '2025-05-22',
+		estimateTime: 10,
+		taskType: 'feature',
 		priority: 'high',
 		project: 'Lookr3',
 		relateTask: [],
@@ -33,10 +35,11 @@ export const INITIAL_TASKS: Task[] = [
 	},
 	{
 		id: 'task-003',
-		title: 'Design landing page',
+		summary: 'Design landing page',
 		description: 'Design landing page',
 		status: 'backlog',
-		dueDate: '2025-05-25',
+		estimateTime: 3,
+		taskType: 'bug',
 		priority: 'low',
 		project: 'tico run',
 		relateTask: [],
@@ -45,11 +48,12 @@ export const INITIAL_TASKS: Task[] = [
 	},
 	{
 		id: 'task-004',
-		title: 'Fix API rate limit bug',
+		summary: 'Fix API rate limit bug',
 		description: 'Fix API rate limit bug',
 		status: 'in progress',
-		dueDate: '2025-05-18',
+		estimateTime: 3,
 		priority: 'high',
+		taskType: 'bug',
 		project: 'Backend Services',
 		relateTask: [],
 		childTask: [],
@@ -57,10 +61,11 @@ export const INITIAL_TASKS: Task[] = [
 	},
 	{
 		id: 'task-005',
-		title: 'Release version 1.0',
+		summary: 'Release version 1.0',
 		description: 'Release version 1.0',
 		status: 'done',
-		dueDate: '2025-05-10',
+		estimateTime: 10,
+		taskType: 'release',
 		project: 'datar',
 		priority: 'low',
 		relateTask: [],
@@ -71,11 +76,15 @@ export const INITIAL_TASKS: Task[] = [
 
 export type Task = {
 	id: string;
-	title: string;
+	summary: string;
 	description: string;
-	status: 'backlog' | 'in progress' | 'done';
+	// 目前進度
+	status: string;
+	// 專案
 	project: string;
-	dueDate: string;
+	// 預估時間
+	estimateTime: number;
+	taskType: 'bug' | 'feature' | 'wording' | 'update' | 'release';
 	priority: 'low' | 'medium' | 'high';
 	relateTask: RelateTask[];
 	childTask: RelateTask[];
@@ -84,7 +93,7 @@ export type Task = {
 
 export type RelateTask = {
 	id: string;
-	title: string;
+	summary: string;
 };
 
 export type BoardSectionsType = {

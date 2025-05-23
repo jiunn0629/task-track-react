@@ -1,8 +1,10 @@
-import Layout from "./components/layout/Layout.tsx";
-
+import Layout from './components/layout/Layout.tsx';
+import { PopupProvider } from './context/PopupContext.tsx';
 
 export default function App() {
-  return (
-    <Layout />
-  );
+	return (
+		<PopupProvider>
+			<Layout />
+		</PopupProvider>
+	);
 }
